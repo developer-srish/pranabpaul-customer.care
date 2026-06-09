@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranab Paul & Dipa Paul Shoe Enterprise - Support</title>
+    <style>
+        /* ==========================================================================
+           1. CUSTOM RESET & DOCUMENT STYLING (Color Scheme Configuration)
+           ========================================================================== */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #FDF6E3; /* Cream / Solarized Light Background */
+            color: #1A1126; /* Midnight Plum Text */
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* ==========================================================================
+           2. BRANDING HEADER
+           ========================================================================== */
+        .main-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .main-header h1 {
+            color: #2E1A47; /* Deep Amethyst Title */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 5px 0;
+            padding: 0 10px;
+        }
+
+        .main-header p {
+            color: #5C5265; /* Muted Mulberry Subtext */
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           3. FORM CONTAINER CARD
+           ========================================================================== */
+        .form-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 25px;
+            background: #F0EAE1; /* Soft Alabaster Card Surface */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(46, 26, 71, 0.08);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid #2E1A47; /* Deep Amethyst Accent Top Border */
+        }
+
+        /* ==========================================================================
+           4. FORM FIELDS & LABELS
+           ========================================================================== */
+        .form-group { 
+            margin-bottom: 15px; 
+        }
+
+        .form-group label { 
+            display: block; 
+            color: #2E1A47; /* Deep Amethyst Labels */
+            font-weight: 700; 
+            margin-bottom: 6px; 
+            font-size: 14px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #E2DKD5; /* Pebble Smooth Fields Border */
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #1A1126; /* Midnight Plum Field Text */
+            background-color: #FFFFFF; /* Pure White Field Surface */
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2E1A47; /* Deep Amethyst Focus Outline */
+            background-color: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           5. BUTTONS (Action Elements)
+           ========================================================================== */
+        .submit-btn {
+            background-color: #D4AF37; /* Luxe Gold Action Pop */
+            color: #1A1126; /* Midnight Plum Text for Premium Readability */
+            border: none;
+            padding: 16px 20px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover { 
+            background-color: #bfa032; 
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3); 
+        }
+
+        .submit-btn:disabled { 
+            background-color: #E9E3DB; /* Warm Mist Background for Disabled State */
+            color: #A39AA8; /* Dusty Lavender Disabled Text */
+            cursor: not-allowed; 
+        }
+
+        /* ==========================================================================
+           6. SUCCESS WINDOW OVERLAY
+           ========================================================================== */
+        #success-overlay {
+            display: none;
+            position: absolute;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background: rgba(240, 234, 225, 0.98); /* Alabaster Opaque Cover Mask */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 10;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .success-icon { 
+            font-size: 45px; 
+            color: #D4AF37; /* Luxe Gold Icon Color */
+            margin-bottom: 12px; 
+        }
+
+        #success-overlay h2 {
+            color: #2E1A47; /* Deep Amethyst Header */
+            margin: 0 0 8px 0;
+        }
+
+        #success-overlay p {
+            color: #5C5265; /* Muted Mulberry Body Text */
+            max-width: 85%; 
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .reset-link {
+            color: #2E1A47; /* Deep Amethyst Outline Link */
+            background: none;
+            border: 2px solid #2E1A47;
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.2s ease;
+        }
+
+        .reset-link:hover {
+            background: #2E1A47;
+            color: #FFFFFF; /* Pure White Contrast Text */
+        }
+    </style>
+</head>
+<body>
+
+<div id="CustomerCare" class="page">
+    <div class="main-header">
+        <h1>Pranab Paul & Dipa Paul Shoe Enterprise</h1>
+        <p>Customer Care & Support Portal</p>
+    </div>
+
+    <div class="form-container">
+        
+        <div id="success-overlay">
+            <div class="success-icon">👟</div>
+            <h2>Request Submitted!</h2>
+            <p>Our support team will review your case details and get back to you shortly.</p>
+            <button class="reset-link" onclick="resetForm()">New Support Request</button>
+        </div>
+
+        <form id="shoeCareForm">
+            <div class="form-group">
+                <label for="nameInput">Customer Name</label>
+                <input type="text" id="nameInput" name="Name" placeholder="Full Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phoneInput">Phone Number</label>
+                <input type="tel" id="phoneInput" name="Phone" placeholder="Mobile Number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="orderInput">Order / Invoice Number</label>
+                <input type="text" id="orderInput" name="Order_Number" placeholder="e.g. Bill No. or Order ID (Optional)">
+            </div>
+
+            <div class="form-group">
+                <label for="issueSelect">Reason for Support</label>
+                <select id="issueSelect" name="Issue_Type" required>
+                    <option value="" disabled selected>Select an option...</option>
+                    <option value="Size Replacement">Size Replacement Request</option>
+                    <option value="Return / Refund">Return & Refund Status</option>
+                    <option value="Defective Article">Damaged / Defective Shoe</option>
+                    <option value="Delivery Delay">Delivery Delay / Inquiry</option>
+                    <option value="Other">Other Issues / Feedback</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="detailsInput">Shoe Model, Color & Size</label>
+                <input type="text" id="detailsInput" name="Shoe_Details" placeholder="e.g. Formal Black - Size 8" required>
+            </div>
+
+            <div class="form-group">
+                <label for="messageTextarea">Explain Your Issue</label>
+                <textarea id="messageTextarea" name="Message" rows="4" placeholder="Provide extra details to help us assist you faster..." required></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-btn">Submit Case</button>
+        </form>
+    </div>
+</div>
+
+<script>
+  // Active Deployment Endpoints configuration map
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyTo9Ye018QWRx7_jBVQhaxndgStopYNfzNCSLy-I8CWkfpoQCpBxI_Rad8vJWTiIGh7g/exec'; 
+  
+  const form = document.getElementById('shoeCareForm');
+  const btn = document.getElementById('submitBtn');
+  const overlay = document.getElementById('success-overlay');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // UI processing safety switch locking elements
+    btn.disabled = true;
+    btn.innerHTML = "Submitting Request...";
+
+    const formData = new URLSearchParams(new FormData(form)).toString();
+
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: formData,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    })
+    .then(response => {
+        // Trigger clean animations state shifting overlays
+        overlay.style.display = 'flex';
+        form.style.visibility = 'hidden';
+    })
+    .catch(error => {
+        alert("Network Error! Please check your connection and try again.");
+        btn.disabled = false;
+        btn.innerHTML = "Submit Case";
+    });
+  });
+
+  // Interface structural element formatting reset rule configuration
+  function resetForm() {
+    form.reset();
+    form.style.visibility = 'visible';
+    overlay.style.display = 'none';
+    btn.disabled = false;
+    btn.innerHTML = "Submit Case";
+  }
+</script>
+</body>
+</html>
